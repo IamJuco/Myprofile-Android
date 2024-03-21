@@ -18,19 +18,28 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
-        val btn_login = findViewById<Button>(R.id.btn_login)
-        val btn_register = findViewById<Button>(R.id.btn_register)
-        val et_id = findViewById<EditText>(R.id.et_id)
-        val et_password = findViewById<EditText>(R.id.et_password)
-        val getIdData = intent.getStringExtra("id")
-        val getPasswordData = intent.getStringExtra("password")
+        val login = findViewById<Button>(R.id.btn_login)
+        val register = findViewById<Button>(R.id.btn_register)
+        val id = findViewById<EditText>(R.id.et_id)
+        val password = findViewById<EditText>(R.id.et_password)
 
+        resultLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                if (result.resultCode == RESULT_OK) {
+                    val loginId = result.data?.getStringExtra("id") ?: ""
+                    val loginPassword = result.data?.getStringExtra("password") ?: ""
 
-        btn_login.setOnClickListener {
-            val checkId = et_id.text.toString()
-            val checkPassword = et_password.text.toString()
+                    id.setText(loginId)
+                    password.setText(loginPassword)
 
-            if (checkId.isEmpty() || checkPassword.isEmpty()){
+                }
+            }
+
+        login.setOnClickListener {
+            val checkId = id.text.toString()
+            val checkPassword = password.text.toString()
+
+            if (checkId.isEmpty() || checkPassword.isEmpty()) {
                 Toast.makeText(this, "아이디와 비밀번호를 모두 입력해주세요.", Toast.LENGTH_SHORT).show()
 
             } else {
@@ -41,13 +50,11 @@ class SignInActivity : AppCompatActivity() {
             }
         }
 
-        btn_register.setOnClickListener {
+        register.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
-            resultLauncher.launch(intent) // 데이터를 받아올 Activity
-            startActivity(intent)
+            resultLauncher.launch(intent)
+
         }
-
-
-
     }
+
 }

@@ -21,16 +21,16 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        var iv_area = findViewById<ImageView>(R.id.iv_area)
-        val btn_exit = findViewById<Button>(R.id.btn_exit)
-        val tv_id = findViewById<TextView>(R.id.tv_id)
+        var imageArea = findViewById<ImageView>(R.id.iv_area)
+        val exit = findViewById<Button>(R.id.btn_exit)
+        val id = findViewById<TextView>(R.id.tv_id)
 
-        iv_area.setImageResource(imageList.random())
+        imageArea.setImageResource(imageList.random())
 
         val data = intent.getStringExtra("loginId")
-        tv_id.text = data
+        id.text = data
 
-        btn_exit.setOnClickListener {
+        exit.setOnClickListener {
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
             finish()
