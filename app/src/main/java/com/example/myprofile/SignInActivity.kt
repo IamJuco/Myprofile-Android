@@ -42,7 +42,8 @@ class SignInActivity : AppCompatActivity() {
             if (checkId.isEmpty() || checkPassword.isEmpty()) {
                 Toast.makeText(this, "아이디와 비밀번호를 모두 입력해주세요.", Toast.LENGTH_SHORT).show()
 
-            } else {
+            }
+            else {
                 val intent = Intent(this, HomeActivity::class.java)
                 intent.putExtra("loginId", checkId)
                 startActivity(intent)

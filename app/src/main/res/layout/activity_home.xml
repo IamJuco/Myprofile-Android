@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".HomeActivity">
-
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -29,23 +29,25 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        android:orientation="horizontal">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="아이디 : "
-            android:layout_gravity="center"/>
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tv_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="aaaa"
-            android:layout_gravity="center"/>
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -55,22 +57,22 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        android:orientation="horizontal">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="이름 : "
-            android:layout_gravity="center"/>
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="주성현"
-            android:layout_gravity="center"/>
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -80,22 +82,22 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        android:orientation="horizontal">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="나이 : "
-            android:layout_gravity="center"/>
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="26"
-            android:layout_gravity="center"/>
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -114,13 +116,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="MBTI : " />
+            android:text="MBTI : "
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="ENFP" />
+            android:text="ENFP"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -128,8 +132,8 @@
         android:id="@+id/btn_exit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="종료"
         android:layout_marginBottom="50dp"
+        android:text="종료"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
