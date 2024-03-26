@@ -7,7 +7,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
 
 class SignInActivity : AppCompatActivity() {
@@ -20,23 +19,23 @@ class SignInActivity : AppCompatActivity() {
 
         val login = findViewById<Button>(R.id.btn_login)
         val register = findViewById<Button>(R.id.btn_register)
-        val id = findViewById<EditText>(R.id.et_id)
+        val email = findViewById<EditText>(R.id.et_email)
         val password = findViewById<EditText>(R.id.et_password)
 
         resultLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
                 if (result.resultCode == RESULT_OK) {
-                    val loginId = result.data?.getStringExtra("id") ?: ""
+                    val loginId = result.data?.getStringExtra("email") ?: ""
                     val loginPassword = result.data?.getStringExtra("password") ?: ""
 
-                    id.setText(loginId)
+                    email.setText(loginId)
                     password.setText(loginPassword)
 
                 }
             }
 
         login.setOnClickListener {
-            val checkId = id.text.toString()
+            val checkId = email.text.toString()
             val checkPassword = password.text.toString()
 
             if (checkId.isEmpty() || checkPassword.isEmpty()) {
@@ -45,7 +44,7 @@ class SignInActivity : AppCompatActivity() {
             }
             else {
                 val intent = Intent(this, HomeActivity::class.java)
-                intent.putExtra("loginId", checkId)
+                intent.putExtra("loginEmail", checkId)
                 startActivity(intent)
 
             }

@@ -23,12 +23,12 @@ class HomeActivity : AppCompatActivity() {
 
         var imageArea = findViewById<ImageView>(R.id.iv_area)
         val exit = findViewById<Button>(R.id.btn_exit)
-        val id = findViewById<TextView>(R.id.tv_id)
+        val email = findViewById<TextView>(R.id.tv_email)
 
         imageArea.setImageResource(imageList.random())
 
-        val data = intent.getStringExtra("loginId")
-        id.text = data
+        val data = intent.getStringExtra("loginEmail")
+        email.text = data
 
         exit.setOnClickListener {
             val intent = Intent(this, SignInActivity::class.java)
