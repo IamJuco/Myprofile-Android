@@ -48,7 +48,7 @@ class SignUpActivity : AppCompatActivity() {
                 isGoToJoin = false
 
             } else if (!passwordPattern){
-                Toast.makeText(this, "숫자 + 영문 + 특수문자 형식으로 8자이상 16자 이하로 조합해주세요.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "숫자 + 영문 + 특수문자를 조합하여 8자이상 16자 이하로 만들어주세요.", Toast.LENGTH_SHORT).show()
                 isGoToJoin = false
             }
 
