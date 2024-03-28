@@ -14,14 +14,14 @@ class SignInActivity : AppCompatActivity() {
 
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
 
+    private val login: Button by lazy { findViewById(R.id.btn_login) }
+    private val register: Button by lazy { findViewById(R.id.btn_register) }
+    private val id: EditText by lazy { findViewById(R.id.et_id) }
+    private val password: EditText by lazy { findViewById(R.id.et_password) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
-
-        val login = findViewById<Button>(R.id.btn_login)
-        val register = findViewById<Button>(R.id.btn_register)
-        val id = findViewById<EditText>(R.id.et_id)
-        val password = findViewById<EditText>(R.id.et_password)
 
         resultLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->

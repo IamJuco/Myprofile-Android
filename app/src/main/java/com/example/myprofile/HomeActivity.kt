@@ -17,13 +17,13 @@ class HomeActivity : AppCompatActivity() {
         R.drawable.seonghyun5,
     )
 
+    private val imageArea: ImageView by lazy { findViewById(R.id.iv_area) }
+    private val exit: Button by lazy { findViewById(R.id.btn_exit) }
+    private val id: TextView by lazy { findViewById(R.id.tv_id) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-
-        var imageArea = findViewById<ImageView>(R.id.iv_area)
-        val exit = findViewById<Button>(R.id.btn_exit)
-        val id = findViewById<TextView>(R.id.tv_id)
 
         imageArea.setImageResource(imageList.random())
 
